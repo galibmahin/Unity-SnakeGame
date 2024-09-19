@@ -4,13 +4,13 @@ using UnityEngine;
 public class Snake : MonoBehaviour
 {
    private Vector2 _direction = Vector2.right;
-   private List<Transform> _segment;
+   private List<Transform> _segment = new List<Transform>();
    public Transform segementPrefab;
+   public int initialSize = 4;
 
    private void Start() 
    {
-        _segment = new List<Transform>();
-        _segment.Add(this.transform); 
+        ResetState();
    }
 
    private void Update() 
@@ -48,13 +48,32 @@ public class Snake : MonoBehaviour
         segmnet.position = _segment[_segment.Count - 1].position;
 
         _segment.Add(segmnet);
-        Debug.Log(segmnet);
    }
 
-     private void OnTriggerEnter2D(Collider2D other) 
+    private void ResetState() {
+        for (int i = 1; i < _segment.Count; i++)
+        {
+            Destroy(_segment[i].gameObject);
+        }
+
+        _segment.Clear();
+        _segment.Add(this.transform);
+
+        for (int i = 1; i < this.initialSize; i++)
+        {
+            _segment.Add(Instantiate(this.segementPrefab));
+        }
+
+        this.transform.position = Vector2.zero;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.tag == "Food") {
             Grow();
+        } else if (other.tag == "Obstacle")
+        {
+           ResetState();
         }
        
     }
