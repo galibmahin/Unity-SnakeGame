@@ -11,4 +11,4 @@ This is my game that i made in Unity, well its mainly from a tutorial. Looging t
 ![image](https://github.com/user-attachments/assets/96331497-d6d5-433e-bddc-4618c00dd110)
 
 # Tutorail Used
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U8gUnpeaMbQ?si=GWvtclFOl0jd8IRW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/U8gUnpeaMbQ/0.jpg)](https://www.youtube.com/embed/U8gUnpeaMbQ?si=GWvtclFOl0jd8IRW)
